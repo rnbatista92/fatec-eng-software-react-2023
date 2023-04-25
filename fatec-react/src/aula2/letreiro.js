@@ -23,12 +23,6 @@ function Letreiro() {
   return <h1>{texto}</h1>;
 }
 
-function App() {
-  return (
-    <div>
-      <Letreiro />
-    </div>
-  );
-}
 
-export default App;
+
+export default Letreiro;
