@@ -1,18 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Letreiro from './aula2/letreiro';
+import Clock from './aula2/relogio';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="./aula2/letreiro.js">Letreiro</a>
-      </header>
+    <div>
+      <h1>Aula 2</h1>
+      <Letreiro/>
+      
+      <Clock/>
     </div>
-  );
+    
+  )
 }
 
 export default App;
