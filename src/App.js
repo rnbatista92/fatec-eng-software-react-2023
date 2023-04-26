@@ -6,6 +6,8 @@ import Gallery from './aula4/galeria';
 import { Profile } from './aula4/galeria.js';
 import TodoList from './aula4/todolist';
 import Avatar from './aula4/avatar.js';
+import PackingList from './aula4/packinglist';
+import List from './aula4/list';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       <h1>Aula 4</h1>
       <Profile/>
       <TodoList/>
-      <Avatar/>
+      <Gallery/>
+      <PackingList/>
+      <List/>
     </div>
     
   )

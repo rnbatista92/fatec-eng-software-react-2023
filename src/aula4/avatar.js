@@ -1,7 +1,9 @@
-export default function Avatar() {
-    const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
-    const desc = 'Gregorio Y. Zara';
+import { getImageUrl } from './utils';
+
+export default function Avatar(props) {
+    let person = props.person;
+    let size = props.size;
     return (
-        <img className="avatar" src={avatar} alt={desc} />
-    );
+        <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size}/>
+    )   
 }
