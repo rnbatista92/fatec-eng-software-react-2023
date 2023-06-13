@@ -1,0 +1,79 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+    padding: 0;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #004499;
+    text-decoration: none;
+  }
+  
+  .container {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+  }
+  
+  .icon-box {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    border: 1px solid #000000;
+    margin: 1%;
+  }
+  
+  .icon {
+    margin: 0 auto 20px auto;
+    padding-top: 17px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    background: #07292c;
+  }
+  
+  .icon i {
+    font-size: 36px;
+    line-height: 1;
+    color: #fff;
+  }
+  
+  .offset {
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+  
+  .coluna {
+    display: grid; /* Define o display como grid */
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas com tamanhos iguais */
+    gap: 1%; /* Define a margem entre as divs */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .coluna {
+      grid-template-columns: 1fr; /* Para telas menores, muda para uma única coluna */
+    }
+  }
+  
+    h1 {
+      color: #000000;
+
+    }
+    h2 {
+      color: #000000;
+    }

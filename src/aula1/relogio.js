@@ -12,8 +12,8 @@ function Clock() {
 
   return (
     <div>
-      <h1>Relógio</h1>
-      <p>{time.toLocaleTimeString()}</p>
+      <h2>Relógio</h2>
+      <h3>{time.toLocaleTimeString()}</h3>
     </div>
   );
 }

@@ -20,7 +20,8 @@ function Letreiro() {
     return () => clearTimeout(timer);
   }, [texto, indice]);
 
-  return <h1>{texto}</h1>;
+  
+  return <h3>{texto}</h3>;
 }
 
 
