@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function Calculadora() {
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
+  const [isResultShown, setIsResultShown] = useState(false);
 
   const handleClick = (e) => {
     const value = e.target.getAttribute("data-value");
@@ -12,6 +13,7 @@ function Calculadora() {
       case "clear":
         setInput("");
         setResult("");
+        setIsResultShown(false);
         break;
       case "delete":
         setInput(input.slice(0, -1));
@@ -22,9 +24,16 @@ function Calculadora() {
         } catch (error) {
           setResult("Error");
         }
+        setIsResultShown(true);
         break;
       default:
-        setInput(input + value);
+        if (isResultShown) {
+          setInput(value);
+          setResult("");
+          setIsResultShown(false);
+        } else {
+          setInput(input + value);
+        }
         break;
     }
   };
