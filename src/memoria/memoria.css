@@ -1,8 +1,13 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.jogo {
+  align-items: center;
 }
 
 h1 {
@@ -60,5 +65,53 @@ h1 {
 }
 
 .card.matched span {
+  color: #fff;
+}
+
+.reset{
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgb(116, 116, 116);
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.reset:hover {
+  background-color: #8b0000;
+  width: 50%;
+  color: #fff;
+}
+
+.back{
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgb(116, 116, 116);
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.back:hover {
+  background-color: #00076b;
+  width: 50%;
   color: #fff;
 }

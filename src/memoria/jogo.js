@@ -84,7 +84,7 @@ const MemoryGame = () => {
   };
 
   return (
-    <div>
+    <div className="jogo">
       <h1>Jogo da Memória</h1>
       {gameStarted ? (
         <p className="message">
@@ -94,7 +94,7 @@ const MemoryGame = () => {
         <p className="message">
           <h2>Parabéns, você encontrou todos os pares.</h2>
           <br/>
-          <Link to="/" onClick={handleRestartGame}>Jogar novamente</Link>        
+          <Link to="/" onClick={handleRestartGame} className="reset">Jogar novamente</Link>        
         </p>
         
       )}
@@ -115,12 +115,11 @@ const MemoryGame = () => {
         ))}
       </div>
       {gameStarted ? (
-        <Link to="/">Voltar</Link>
+        <Link to="/" className="back">Voltar</Link>
       ) : (
-        <>
-          
+        <>         
           <br />
-          <Link to="/">Voltar</Link>
+        <Link to="/" className="back">Voltar</Link>
         </>
       )}
     </div>
