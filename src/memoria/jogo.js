@@ -156,6 +156,7 @@ const Jogo = () => {
     setCartas(cartasAleatorias);
   }, []);
 
+
   const selecionarCarta = (id) => {
     const cartaSelecionada = cartas.find((carta) => carta.id === id);
     if (cartaSelecionada.foiEncontrada) {
@@ -200,13 +201,15 @@ const Jogo = () => {
       }, 500);
     }
   };
+
+  
   if (inGame) {
     return (
       <div>
         <h1>Jogo da Memória</h1>
 
         <p className="frase">
-          Encontre todos os pares de cartas iguais! <br/> Você encontrou{" "}
+          Você encontrou{" "}
           {paresEncontrados} {paresEncontrados === 1 ? "par" : "pares"} até
           agora. 
         </p>
@@ -218,10 +221,10 @@ const Jogo = () => {
               onClick={() => selecionarCarta(carta.id)}
             >
               {selecionadaTemporariamente === carta ||
-              selecionadas.includes(carta) ? (
-                <span>{carta.emoji}</span>
-              ) : (
-                <span>🃏</span>
+                (Array.isArray(selecionadas) && selecionadas.includes(carta)) ? (
+                  <span>{carta.emoji}</span>
+                ) : (
+                  <span>🃏</span>
               )}
             </div>
           ))}
