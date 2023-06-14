@@ -1,68 +1,64 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  .frase {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-  .textRight{
-    text-align: right;
-  }
-  
-  .cartas {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .carta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(25% - 10px);
-    height: 150px;
-    margin: 5px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-  }
-  
-  .carta:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .carta span {
-    font-size: 72px;
-  }
-  
-  .carta.encontrada {
-    background-color: #524ac3;
-    box-shadow: none;
-    cursor: default;
-  }
+.message {
+  text-align: center;
+}
 
-  .carta.encontrada:hover {
-    transform: none;
-  }
-  
-  .carta.encontrada span {
-    color: #fff;
-  }
-  
+.textRight {
+  text-align: right;
+}
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  
-  
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(25% - 10px);
+  height: 150px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card span {
+  font-size: 72px;
+}
+
+.card.matched {
+  background-color: #524ac3;
+  box-shadow: none;
+  cursor: default;
+}
+
+.card.matched:hover {
+  transform: none;
+}
+
+.card.matched span {
+  color: #fff;
+}

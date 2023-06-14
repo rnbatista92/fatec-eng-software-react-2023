@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './index/home';
 import Aula1 from './aula1/aula1';
 import Calculadora from './calculadora/calc';
-import Jogo from './memoria/jogo';
+import MemoryGame from './memoria/jogo';
 import ContadorGenero from "./aula3/index";
 
 
@@ -22,7 +22,7 @@ function App() {
 
         <Route path="/calculadora/calc" element={<Calculadora />} />
 
-        <Route path="/memoria/jogo" element={<Jogo />} />
+        <Route path="/memoria/jogo" element={<MemoryGame />} />
 
       </Routes>
     </BrowserRouter>

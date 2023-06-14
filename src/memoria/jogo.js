@@ -2,228 +2,129 @@ import React, { useState, useEffect } from "react";
 import "./memoria.css";
 import { Link } from "react-router-dom";
 
-const qtdeCartas = 16;
+const CARD_COUNT = 16;
 
 function embaralha(array) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
-
-  return array;
+  return shuffledArray;
 }
 
 const emojis = [
-  "🌮",
-  "🍔",
-  "🍕",
-  "🍟",
-  "🌭",
-  "🍿",
-  "🥨",
-  "🥓",
-  "🍳",
-  "🍣",
-  "🍦",
-  "🍰",
-  "🍩",
-  "🍭",
-  "🍪",
-  "🍫",
-  "🍬",
-  "🍯",
-  "🥛",
-  "🍺",
-  "🍷",
-  "🍹",
-  "🍸",
-  "🥤",
-  "🍵",
-  "🥔",
-  "🧅",
-  "🥐",
-  "🥯",
-  "🥖",
-  "🥪",
-  "🥫",
-  "🍞",
-  "🥚",
-  "🥩",
-  "🍖",
-  "🍗",
-  "🍠",
-  "🥟",
-  "🍱",
-  "🥡",
-  "🍲",
-  "🍛",
-  "🍜",
-  "🍝",
-  "🍚",
-  "🍣",
-  "🍤",
-  "🍥",
-  "🥮",
-  "🍢",
-  "🍡",
-  "🍧",
-  "🍨",
-  "🍦",
-  "🥧",
-  "🍮",
-  "🍭",
-  "🍬",
-  "🍫",
-  "🍿",
-  "🍩",
-  "🍪",
-  "🌰",
-  "🥜",
-  "🍯",
-  "🥛",
-  "🍼",
-  "☕",
-  "🍵",
-  "🍶",
-  "🍺",
-  "🍻",
-  "🥂",
-  "🍷",
-  "🍸",
-  "🍹",
-  "🧉",
-  "🍾",
+  "🌮", "🍔", "🍕", "🍟", "🌭", "🍿", "🍝", "🥪", "🍳", "🍦", "🍰", "🍩", "🍭", "🍪", "🍫", "🍬"
 ];
 
 
-
-const Jogo = () => {
-  const handleReloadPage = () => {
+const MemoryGame = () => {
+  const handleRestartGame = () => {
     window.location.reload();
   };
-  const [inGame, setInGame] = useState(true);
-  const [cartas, setCartas] = useState([]);
-  const [selecionadas, setSelecionadas] = useState([]);
-  const [selecionadaTemporariamente, setSelecionadaTemporariamente] = useState(null);
-  const [paresEncontrados, setParesEncontrados] = useState(0);
+
+  const [gameStarted, setGameStarted] = useState(false);
+  const [cards, setCards] = useState([]);
+  const [selectedCards, setSelectedCards] = useState([]);
+  const [temporarilySelectedCard, setTemporarilySelectedCard] = useState(null);
+  const [matchedPairs, setMatchedPairs] = useState(0);
 
   useEffect(() => {
-    let cartasAleatorias = [];
-    for (let i = 0; i < qtdeCartas; i += 2) {
-      const indiceAleatorio = Math.floor(Math.random() * emojis.length);
-      cartasAleatorias.push({
-        emoji: emojis[indiceAleatorio],
-        foiEncontrada: false,
-        id: i,
-      });
-      cartasAleatorias.push({
-        emoji: emojis[indiceAleatorio],
-        foiEncontrada: false,
-        id: i + 1,
-      });
-    }
-    cartasAleatorias = embaralha(cartasAleatorias);
-    setCartas(cartasAleatorias);
+    const randomEmojis = emojis.slice(0, CARD_COUNT / 2);
+    const duplicatedEmojis = randomEmojis.concat(randomEmojis);
+    const shuffledCards = embaralha(
+      duplicatedEmojis.map((emoji, index) => ({
+        id: index,
+        emoji,
+        isMatched: false,
+      }))
+    );
+    setCards(shuffledCards);
+    setGameStarted(true);
   }, []);
 
+  const selectCard = (id) => {
+    if (!gameStarted) return;
 
-  const selecionarCarta = (id) => {
-    const cartaSelecionada = cartas.find((carta) => carta.id === id);
-    if (cartaSelecionada.foiEncontrada) {
-      return;
-    }
-    if (selecionadaTemporariamente !== null) {
-      return;
-    }
-    if (selecionadas.length === 0) {
-      setSelecionadaTemporariamente(cartaSelecionada);
+    const selectedCard = cards.find((card) => card.id === id);
+    if (selectedCard.isMatched || temporarilySelectedCard) return;
+
+    if (selectedCards.length === 0) {
+      setTemporarilySelectedCard(selectedCard);
       setTimeout(() => {
-        setSelecionadaTemporariamente(null);
-        setSelecionadas([cartaSelecionada]);
+        setTemporarilySelectedCard(null);
+        setSelectedCards([selectedCard]);
       }, 500);
-    } else if (selecionadas.length === 1) {
-      const segundaSelecionada = cartaSelecionada;
-      setSelecionadaTemporariamente(cartaSelecionada);
+    } else if (selectedCards.length === 1) {
+      const secondSelectedCard = selectedCard;
+      setTemporarilySelectedCard(selectedCard);
       setTimeout(() => {
-        setSelecionadaTemporariamente(null);
-        setSelecionadas([...selecionadas, segundaSelecionada]);
-        if (segundaSelecionada.emoji === selecionadas[0].emoji) {
-          setParesEncontrados(paresEncontrados + 1);
-          if(paresEncontrados+1 === qtdeCartas/2) {
-            setInGame(false);
+        setTemporarilySelectedCard(null);
+        setSelectedCards([...selectedCards, secondSelectedCard]);
+        if (secondSelectedCard.emoji === selectedCards[0].emoji) {
+          setMatchedPairs(matchedPairs + 1);
+          if (matchedPairs + 1 === CARD_COUNT / 2) {
+            setGameStarted(false);
           }
-          const novasCartas = cartas.map((carta) => {
-            if (
-              carta.id === cartaSelecionada.id ||
-              carta.id === selecionadas[0].id
-            ) {
-              carta.foiEncontrada = true;
-            }
-            return carta;
-          });
-          setCartas(novasCartas);
-          setSelecionadas([]);
+          setCards((prevCards) =>
+            prevCards.map((card) =>
+              card.id === selectedCard.id || card.id === selectedCards[0].id
+                ? { ...card, isMatched: true }
+                : card
+            )
+          );
+          setSelectedCards([]);
         } else {
           setTimeout(() => {
-            setSelecionadas([]);
+            setSelectedCards([]);
           }, 400);
         }
       }, 500);
     }
   };
 
-  
-  if (inGame) {
-    return (
-      <div>
-        <h1>Jogo da Memória</h1>
-
-        <p className="frase">
-          Você encontrou{" "}
-          {paresEncontrados} {paresEncontrados === 1 ? "par" : "pares"} até
-          agora. 
+  return (
+    <div>
+      <h1>Jogo da Memória</h1>
+      {gameStarted ? (
+        <p className="message">
+          Encontre os pares de emojis clicando nas cartas. Boa sorte!<br/>
         </p>
-        <div className="cartas">
-          {cartas.map((carta) => (
-            <div
-              key={carta.id}
-              className={`carta ${carta.foiEncontrada ? "encontrada" : ""}`}
-              onClick={() => selecionarCarta(carta.id)}
-            >
-              {selecionadaTemporariamente === carta ||
-                (Array.isArray(selecionadas) && selecionadas.includes(carta)) ? (
-                  <span>{carta.emoji}</span>
-                ) : (
-                  <span>🃏</span>
-              )}
-            </div>
-          ))}
-        </div>
+      ) : (
+        <p className="message">
+          <h2>Parabéns, você encontrou todos os pares.</h2>
+          <br/>
+          <Link to="/" onClick={handleRestartGame}>Jogar novamente</Link>        
+        </p>
+        
+      )}
+      <div className="cards">
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className={`card ${card.isMatched ? "matched" : ""}`}
+            onClick={() => selectCard(card.id)}
+          >
+            {temporarilySelectedCard === card ||
+            (Array.isArray(selectedCards) && selectedCards.includes(card)) ? (
+              <span>{card.emoji}</span>
+            ) : (
+              <span>🃏</span>
+            )}
+          </div>
+        ))}
+      </div>
+      {gameStarted ? (
         <Link to="/">Voltar</Link>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <h1>Jogo da Memória</h1>
-
-        <p className="frase">
-        Parabens, você encontrou todos os pares.
-        </p>
-        <Link to="/" onClick={handleReloadPage}>Jogar novamente</Link> 
-        <br/>
-        <Link to="/" >Voltar</Link>
-      </div>
-    )
-  }
+      ) : (
+        <>
+          
+          <br />
+          <Link to="/">Voltar</Link>
+        </>
+      )}
+    </div>
+  );
 };
 
-export default Jogo;
+export default MemoryGame;
