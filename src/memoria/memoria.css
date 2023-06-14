@@ -49,12 +49,20 @@ body {
   }
   
   .carta.encontrada {
-    background-color: #8bc34a;
+    background-color: #524ac3;
     box-shadow: none;
     cursor: default;
+  }
+
+  .carta.encontrada:hover {
+    transform: none;
   }
   
   .carta.encontrada span {
     color: #fff;
   }
+  
+
+
+  
   
