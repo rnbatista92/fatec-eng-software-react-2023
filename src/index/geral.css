@@ -35,6 +35,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
     text-align: center;
     border: 1px solid #000000;
     margin: 1%;
+    background-color: #eee;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
   
   .icon {

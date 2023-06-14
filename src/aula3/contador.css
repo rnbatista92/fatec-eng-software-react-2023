@@ -25,6 +25,7 @@
     margin-right: 0.5rem;
     width: 4rem;
     text-align: center;
+    user-select: none;
   }
   
   .contador-buttons-container {
@@ -53,17 +54,51 @@
     width: 40%;
   }
   
+  .contador-button-increment:hover {
+    background-color: #006400;
+  }
+  
   .contador-button-decrement {
     background-color: red;
     width: 100%;
   }
   
-  .contador-button-increment:hover {
-    background-color: #006400;
-  }
-  
   .contador-button-decrement:hover {
     background-color: #8b0000;
+  }
+
+  .reset{
+    background-color: rgb(116, 116, 116);
+    width: 50%;
+    color: #fff;
+  }
+
+  .reset:hover {
+    background-color: #8b0000;
+    width: 50%;
+    color: #fff;
+  }
+
+  .back{
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgb(116, 116, 116);
+    border: none;
+    border-radius: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .back:hover {
+    background-color: #00076b;
+    width: 50%;
+    color: #fff;
   }
 
   .contador-genero {
@@ -71,6 +106,12 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    user-select: none;
+    width: 120%;
   }
   
   .contador-genero-row {

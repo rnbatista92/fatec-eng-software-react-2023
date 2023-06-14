@@ -5,16 +5,20 @@ body {
   height: 100vh;
 }
 
-.calc {
+.index{
+  background-color: #eee;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.calculadora {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-gap: 8px;
     padding: 16px;
-    background-color: #eee;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 250px;
   }
   
   .input {
@@ -47,6 +51,7 @@ body {
     color: #333;
     background-color: #c4ccff;
     cursor: pointer;
+    user-select: none;
   }
   
   button:active {
@@ -86,6 +91,30 @@ body {
   }
   
   button[data-value="delete"]:active {
+    color: #fff;
+  }
+
+  .back{
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgb(116, 116, 116);
+    border: none;
+    border-radius: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .back:hover {
+    background-color: #00076b;
+    width: 50%;
     color: #fff;
   }
   

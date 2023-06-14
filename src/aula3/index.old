@@ -48,7 +48,7 @@ const ContadorGenero = () => {
             <input id="contador-total-input" type="number" value={total} disabled />
         </div>
         <br/><br/>
-        <button className="contador-button-decrement" onClick={reset}>
+        <button className="reset" onClick={reset}>
           Reiniciar
         </button>
       <br/>

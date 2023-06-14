@@ -18,7 +18,7 @@ function Home() {
         <div className="offset icon-box">
           <h3 className="title">Aula 3 - Contador de Pessoas</h3>
           <div>
-            <Link to="/aula3/index">Clique aqui</Link>
+            <Link to="/aula3/contador">Clique aqui</Link>
           </div>
         </div>
         <div className="offset icon-box">
