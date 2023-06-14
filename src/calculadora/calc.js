@@ -29,7 +29,7 @@ function Calculadora() {
       default:
         if (isResultShown) {
           setInput(value);
-          setResult("");
+          setResult("0");
           setIsResultShown(false);
         } else {
           setInput(input + value);
@@ -41,7 +41,7 @@ function Calculadora() {
   return (
     <div className="calc">
       <div className="input">{input || "0"}</div>
-      <div className="result">{result}</div>
+      <div className="result">{result || "0"}</div>
 
       <button data-value="7" onClick={handleClick}>
         7
