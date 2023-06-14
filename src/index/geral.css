@@ -2,10 +2,11 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
     padding: 0;
   }
   
-  body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  body, p, ul, ol, li {
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
     font-size: 16px;
     color: #333;
+    background-color: #d3d2d2;
   }
   
   a {
@@ -29,7 +30,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
     padding: 20px;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: #d3d2d2;
     transition: all 0.3s ease-in-out;
     text-align: center;
     border: 1px solid #000000;
@@ -70,10 +71,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
     }
   }
   
-    h1 {
-      color: #000000;
-
-    }
-    h2 {
-      color: #000000;
-    }
+  h1 {
+    color: #000000;
+  }
+  
+  h2 {
+    color: #000000;
+  }

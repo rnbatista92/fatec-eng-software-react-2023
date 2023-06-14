@@ -1,5 +1,5 @@
 import React from "react";
-import "./Contador.css";
+import "./contador.css";
 
 const Contador = ({ value, onChange }) => {
   const incrementCount = () => {
@@ -7,9 +7,7 @@ const Contador = ({ value, onChange }) => {
   };
 
   const decrementCount = () => {
-
-      onChange(value - 1);
-    
+      onChange(value - 1);    
   };
 
   return (
@@ -18,16 +16,19 @@ const Contador = ({ value, onChange }) => {
         <button className="contador-button-increment" onClick={incrementCount}>
           +
         </button>
+        
         <button className="contador-button-decrement" onClick={decrementCount}>
           -
         </button>
       </div>
+      <br/>
       <div className="contador-input-container">
         <input
           id="contador-input"
           type="number"
           value={value}
           onChange={(e) => onChange(parseInt(e.target.value))}
+          disabled
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import "../geral.css";
+import "../index/geral.css";
 import Letreiro from './letreiro';
 import Clock from './relogio';
 import { Link } from "react-router-dom";

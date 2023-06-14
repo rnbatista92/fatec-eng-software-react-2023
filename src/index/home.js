@@ -7,7 +7,7 @@ function Home() {
       <h1>Atividades em React das aulas de Laboratório de Engenharia de Software</h1>
       <br/>
       <h2>Rafael Batista - rafael.batista9@fatec.sp.gov.br - R.A. 1570482113041</h2>
-      <br/><br/><br/>
+      <br/><br/>
       <div className="coluna">
         <div className="offset icon-box ">
           <h3 className="title">Aula 2 - Letreiro e Relógio</h3>          
@@ -16,9 +16,9 @@ function Home() {
           </div>
         </div>
         <div className="offset icon-box">
-          <h3 className="title">Aula 3</h3>
+          <h3 className="title">Aula 3 - Contador de Pessoas</h3>
           <div>
-            <Link to="/aula3/atividade1">Atividade 1: Contador de Generos</Link>
+            <Link to="/aula3/index">Clique aqui</Link>
           </div>
         </div>
         <div className="offset icon-box">
@@ -40,7 +40,7 @@ function Home() {
         <div className="offset icon-box">
           <h3 className="title">Jogo da memória</h3>
           <div>
-            <Link to="/atividade6">Clique aqui</Link>
+            <Link to="/memoria/jogo">Clique aqui</Link>
           </div>
       
         </div>

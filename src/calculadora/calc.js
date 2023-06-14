@@ -84,10 +84,7 @@ function Calculadora() {
       </button>
       <button className="operator" data-value="=" onClick={handleClick}>
         =
-      </button>
-
-
-      
+      </button>      
       <button className="operator" data-value="/" onClick={handleClick}>
         ÷
       </button>
