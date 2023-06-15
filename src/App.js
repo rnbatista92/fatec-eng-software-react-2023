@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from './index/home';
-import Aula1 from './aula1/aula1';
+import Home from "./index/home";
+import Aula1 from "./aula1/aula1";
+import Aula4 from "./aula4/aula4";
 import Calculadora from './calculadora/calc';
 import MemoryGame from './memoria/jogo';
 import ContadorGenero from "./aula3/contador";
@@ -19,6 +20,8 @@ function App() {
         <Route path="/aula1/aula1" element={<Aula1 />} />
 
         <Route path="/aula3/contador" element={<ContadorGenero />} />
+
+        <Route path="/aula4/aula4" element={<Aula4 />} />
 
         <Route path="/calculadora/calc" element={<Calculadora />} />
 

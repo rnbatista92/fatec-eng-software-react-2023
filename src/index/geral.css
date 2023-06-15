@@ -1,14 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
-    padding: 0;
-  }
-  
-  body, p, ul, ol, li {
-    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #d3d2d2;
-  }
-  
+
   a {
     color: #0077cc;
     text-decoration: none;
@@ -21,13 +11,17 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
   }
   
   .container {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     text-align: center;
+    width: 100%;
   }
   
   .icon-box {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     overflow: hidden;
     background: #d3d2d2;
@@ -36,7 +30,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
     border: 1px solid #000000;
     margin: 1%;
     background-color: #eee;
-    border: 1px solid #000000;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
@@ -64,21 +57,14 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
   }
   
   .coluna {
-    display: grid; /* Define o display como grid */
-    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas com tamanhos iguais */
-    gap: 1%; /* Define a margem entre as divs */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1%;
   }
   
   @media screen and (max-width: 768px) {
     .coluna {
-      grid-template-columns: 1fr; /* Para telas menores, muda para uma única coluna */
+      grid-template-columns: 1fr;
     }
   }
   
-  h1 {
-    color: #000000;
-  }
-  
-  h2 {
-    color: #000000;
-  }

@@ -86,7 +86,7 @@ const ContadorGenero = () => {
         Reiniciar
       </button>
       <br/>
-      <Link to="/" className="back">Voltar</Link>
+      <Link to="/" className="back button-format">Voltar</Link>
     </div>
   );
 };

@@ -91,12 +91,14 @@ const MemoryGame = () => {
           Encontre os pares de emojis clicando nas cartas. Boa sorte!<br/>
         </p>
       ) : (
+        <>
         <p className="message">
           <h2>Parabéns, você encontrou todos os pares.</h2>
-          <br/>
-          <Link to="/" onClick={handleRestartGame} className="reset">Jogar novamente</Link>        
         </p>
-        
+          <br/>
+          <Link to="/" onClick={handleRestartGame} className="reset button-format">Jogar novamente</Link>
+          <br/>
+        </>
       )}
       <div className="cards">
         {cards.map((card) => (
@@ -115,11 +117,14 @@ const MemoryGame = () => {
         ))}
       </div>
       {gameStarted ? (
-        <Link to="/" className="back">Voltar</Link>
+        <>
+        <br />
+        <Link to="/" className="back button-format">Voltar</Link>
+        </>
       ) : (
         <>         
           <br />
-        <Link to="/" className="back">Voltar</Link>
+        <Link to="/" className="back button-format">Voltar</Link>
         </>
       )}
     </div>

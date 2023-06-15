@@ -1,13 +1,74 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  user-select: none;
+}
+
+body, p, ul, ol, li {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #d3d2d2;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.index{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  user-select: none;
+}
+
+h1 {
+  color: #000000;
+}
+
+h2 {
+  color: #000000;
+}
+
+.button-format{
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgb(116, 116, 116);
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.back:hover {
+  background-color: #00076b;
+  width: 50%;
+  color: #fff;
+}
+
+.reset:hover {
+  background-color: #8b0000;
+  width: 50%;
+  color: #fff;
+}
+

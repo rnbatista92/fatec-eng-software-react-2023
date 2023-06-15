@@ -132,9 +132,7 @@ function Calculadora() {
           ÷
         </button>
       </div>
-      <Link to="/" className="back">
-        Voltar
-      </Link>
+      <Link to="/" className="back button-format">Voltar</Link>
     </div>
   );
 }

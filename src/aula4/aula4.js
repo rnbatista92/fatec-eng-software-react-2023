@@ -1,19 +1,21 @@
 import "../index/geral.css";
-import Letreiro from './letreiro';
-import Clock from './relogio';
+import Gallery from "./galeria";
+import TodoList from "./todolist";
 import { Link } from "react-router-dom";
+import "./aula4.css";
 
 function Aula1() {
   return (
     <div>
-      <div className="offset icon-box">
-        <h2 className="title">Aula 2 - Letreiro e Relógio</h2>
+      <div className="offset box">
+        <h2 className="title">Aula 4 - Galeria e ToDo List</h2>
         <div>
           <br/>
-          <Clock/>
+          <h2>Galeria</h2>
+          <Gallery/>
           <br/>
-          <h2>Letreiro</h2>
-          <Letreiro/>
+          <h2>ToDo List</h2>
+          <TodoList/>
           <br/>
         </div>
           <Link to="/" className="back button-format">Voltar</Link>
